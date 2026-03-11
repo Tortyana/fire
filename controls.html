@@ -1,0 +1,72 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Управление слоями метеоданных</title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 20px; }
+            .control-panel { background: #f5f5f5; padding: 15px; border-radius: 5px; margin-bottom: 20px; }
+            .button-group { margin-bottom: 10px; }
+            button { margin: 5px; padding: 8px 15px; cursor: pointer; }
+            select { margin: 5px; padding: 8px 15px; }
+            .active { background-color: #4CAF50; color: white; }
+            iframe { width: 100%; height: 70vh; border: 1px solid #ccc; }
+        </style>
+    </head>
+    <body>
+        <h1>Управление слоями метеоданных</h1>
+        
+        <div class="control-panel">
+            <h3>Метеопараметры:</h3>
+            <div class="button-group">
+    <button onclick="toggleLayer('Temp')">Температура</button><button onclick="toggleLayer('Pres')">Давление</button><button onclick="toggleLayer('Dn')">Плотность воздуха</button><button onclick="toggleLayer('ZonW')">Зональная компонента ветра</button><button onclick="toggleLayer('MerW')">Меридиональная компонента ветра</button><button onclick="toggleLayer('Es')">Плотность статической энергии</button><button onclick="toggleLayer('DnFe')">Зональная компонента потока воздуха</button><button onclick="toggleLayer('DnFn')">Меридиональная компонента потока воздуха</button>
+            </div>
+            
+            <h3>Высота:</h3>
+            <div class="button-group">
+                <select id="heightSelect" onchange="toggleHeight(this.value)">
+    <option value="0" selected>0 км</option><option value="1" >1 км</option><option value="2" >2 км</option><option value="3" >3 км</option><option value="4" >4 км</option><option value="5" >5 км</option><option value="6" >6 км</option><option value="7" >7 км</option><option value="8" >8 км</option><option value="9" >9 км</option><option value="10" >10 км</option><option value="11" >11 км</option><option value="12" >12 км</option><option value="13" >13 км</option><option value="14" >14 км</option><option value="15" >15 км</option><option value="16" >16 км</option><option value="17" >17 км</option><option value="18" >18 км</option><option value="19" >19 км</option><option value="20" >20 км</option><option value="21" >21 км</option><option value="22" >22 км</option><option value="23" >23 км</option><option value="24" >24 км</option><option value="25" >25 км</option><option value="26" >26 км</option><option value="27" >27 км</option><option value="28" >28 км</option><option value="29" >29 км</option><option value="30" >30 км</option><option value="31" >31 км</option><option value="32" >32 км</option><option value="33" >33 км</option><option value="34" >34 км</option><option value="35" >35 км</option><option value="36" >36 км</option><option value="37" >37 км</option><option value="38" >38 км</option><option value="39" >39 км</option><option value="40" >40 км</option><option value="41" >41 км</option><option value="42" >42 км</option>
+                </select>
+            </div>
+            
+            <h3>Год:</h3>
+            <div class="button-group">
+                <select id="yearSelect" onchange="toggleYear(this.value)">
+    <option value="2005" >2005</option><option value="2006" >2006</option><option value="2007" >2007</option><option value="2008" >2008</option><option value="2009" >2009</option><option value="2010" >2010</option><option value="2011" >2011</option><option value="2012" >2012</option><option value="2013" >2013</option><option value="2014" >2014</option><option value="2015" >2015</option><option value="2016" >2016</option><option value="2017" >2017</option><option value="2018" >2018</option><option value="2019" >2019</option><option value="2020" >2020</option><option value="2021" >2021</option><option value="2022" >2022</option><option value="2023" >2023</option><option value="2024" >2024</option><option value="2025" selected>2025</option>
+                </select>
+            </div>
+            
+            <h3>Месяц:</h3>
+            <div class="button-group">
+                <select id="monthSelect" onchange="toggleMonth(this.value)">
+    <option value="1" selected>Январь</option><option value="2" >Февраль</option><option value="3" >Март</option><option value="4" >Апрель</option><option value="5" >Май</option><option value="6" >Июнь</option><option value="7" >Июль</option><option value="8" >Август</option><option value="9" >Сентябрь</option><option value="10" >Октябрь</option><option value="11" >Ноябрь</option><option value="12" >Декабрь</option>
+                </select>
+            </div>
+        </div>
+        
+        <iframe id="mapFrame" src="weather_map.html"></iframe>
+        
+        <script>
+            function toggleLayer(param) {
+                console.log("Переключение слоя: " + param);
+                alert("В реальном приложении здесь будет переключение слоя " + param);
+            }
+            
+            function toggleHeight(height) {
+                console.log("Переключение высоты: " + height + " км");
+                alert("В реальном приложении здесь будет переключение на высоту " + height + " км");
+            }
+            
+            function toggleYear(year) {
+                console.log("Переключение года: " + year);
+                alert("В реальном приложении здесь будет переключение на год " + year);
+            }
+            
+            function toggleMonth(month) {
+                console.log("Переключение месяца: " + month);
+                alert("В реальном приложении здесь будет переключение на месяц " + month);
+            }
+        </script>
+    </body>
+    </html>
+    
